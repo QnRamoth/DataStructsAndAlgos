@@ -1,13 +1,21 @@
 # Uses python3
-n = int(input())
-a = [int(x) for x in input().split()]
-assert(len(a) == n)
+def MaxPairwiseProductNaive(n, intArray):
+    assert(len(intArray) == n)
 
-result = 0
+    result = 0
 
-for i in range(0, n):
-    for j in range(i+1, n):
-        if a[i]*a[j] > result:
-            result = a[i]*a[j]
+    for i in range(0, n):
+        for j in range(i+1, n):
+            if intArray[i]*intArray[j] > result:
+                result = intArray[i]*intArray[j]
 
-print(result)
+    return result
+    
+if __name__=="__main__":
+    n = int(input())
+    a = input()
+    intArray = [int(x) for x in a.split()]
+
+    result = MaxPairwiseProductNaive(n, intArray)
+
+    print(result)
