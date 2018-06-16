@@ -10,7 +10,7 @@ def get_fibonacci_last_digit_naive(n):
     current  = 1
 
     for _ in range(n - 1):
-        #note, this is tuple destructuring assignment.
+        #note, this is using tuples to perform a destructuring assignment.
         #equivalent to previous = current and current = previous + current.
         #"assign previous and current equal to current and (previous + current) respectively"
         previous, current = current, previous + current
