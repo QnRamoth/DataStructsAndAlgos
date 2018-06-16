@@ -1,4 +1,7 @@
 # Uses python3
+# Understand Least Common Multiple as the least positive integer 
+# divisible by two integers.
+# Note that lcm(a,b)=abs(a*b)/gcd(a,b)
 import sys
 
 def lcm_naive(a, b):
@@ -8,8 +11,17 @@ def lcm_naive(a, b):
 
     return a*b
 
-if __name__ == '__main__':
-    input = sys.stdin.read()
-    a, b = map(int, input.split())
-    print(lcm_naive(a, b))
+def lcm(a, b):
+    return int((abs(a)/gcd(a,b))*abs(b))
 
+def gcd(a, b):
+    a, b = max(a,b), min(a,b)
+    while b !=0:
+        a, b = b, a%b
+    return a
+
+if __name__ == '__main__':
+    inputs = input()
+    a, b = map(int, inputs.split())
+    #print(lcm_naive(a, b))
+    print(lcm(a,b))
