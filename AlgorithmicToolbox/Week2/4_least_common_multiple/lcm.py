@@ -12,7 +12,7 @@ def lcm_naive(a, b):
     return a*b
 
 def lcm(a, b):
-    return int((abs(a)/gcd(a,b))*abs(b))
+    return int((abs(a)//gcd(a,b))*abs(b))
 
 def gcd(a, b):
     a, b = max(a,b), min(a,b)
@@ -23,5 +23,5 @@ def gcd(a, b):
 if __name__ == '__main__':
     inputs = input()
     a, b = map(int, inputs.split())
-    #print(lcm_naive(a, b))
+    # print(lcm_naive(a, b))
     print(lcm(a,b))
