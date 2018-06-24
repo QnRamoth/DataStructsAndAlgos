@@ -16,11 +16,11 @@ def get_fibonacci_huge_naive(n, m):
     return current % m
 
 def get_fibonacci_huge(n, m):
-    if n <= 1:
-        return n
-
     pisano_period = get_pisano_period(m)
     equivalent_n = n % pisano_period
+
+    if equivalent_n <= 1:
+        return equivalent_n
 
     previous = 0
     current  = 1
@@ -49,5 +49,6 @@ def get_pisano_period(m):
 if __name__ == '__main__':
     inputs = input()
     n, m = map(int, inputs.split())
+    # print(get_pisano_period(100))
     # print(get_fibonacci_huge_naive(n, m))
     print(get_fibonacci_huge(n, m))

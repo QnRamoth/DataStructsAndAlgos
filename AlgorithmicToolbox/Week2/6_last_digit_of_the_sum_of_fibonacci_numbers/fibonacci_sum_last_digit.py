@@ -23,18 +23,18 @@ def fibonacci_sum(n):
     if n <= 1:
         return n
 
-    fib_reference = get_fibonacci_huge_last_digit(n+2)
-    if fib_reference == 0:
-        fib_reference += 10
-    return fib_reference - 1
+    fib_nPlusTwoLastDigit = get_fibonacci_huge_last_digit(n+2)
+    if fib_nPlusTwoLastDigit == 0:
+        fib_nPlusTwoLastDigit = 10
+    return fib_nPlusTwoLastDigit - 1
 
 
 def get_fibonacci_huge_last_digit(n):
-    if n <= 1:
-        return n
-
     pisano_period = 60
     equivalent_n = n % pisano_period
+
+    if equivalent_n <= 1:
+        return equivalent_n
 
     previous = 0
     current  = 1
@@ -54,6 +54,6 @@ if __name__ == '__main__':
     #     expected = fibonacci_sum_naive(n1)
     #     actual = fibonacci_sum(n1)
     #     if actual != expected:
-    #         print("Wrong answer: n={}, expected:{}, actual:{}".format(n1, actual, expected))
-        # else:
-        #     print(actual)
+    #         print("Wrong answer: n={}, expected:{}, actual:{}".format(n1, expected, actual))
+    #     # else:
+    #     #     print(actual)
