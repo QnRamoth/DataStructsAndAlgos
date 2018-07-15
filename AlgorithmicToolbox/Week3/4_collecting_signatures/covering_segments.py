@@ -20,8 +20,10 @@ def optimal_points(segments):
     return points
 
 if __name__ == '__main__':
-    inputs = input()
-    n, *data = map(int, inputs.split())
+    input = sys.stdin.read()
+    n, *data = map(int, input.split())
+    # inputs = input()
+    # n, *data = map(int, inputs.split())
     segments = list(map(lambda x: Segment(x[0], x[1]), zip(data[::2], data[1::2])))
     segments.sort()
     points = optimal_points(segments)

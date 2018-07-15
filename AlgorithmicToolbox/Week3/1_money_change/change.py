@@ -14,5 +14,6 @@ def get_change(m):
     return count
 
 if __name__ == '__main__':
-    m = int(input())
+    m = int(sys.stdin.read())
+    # m = int(input())
     print(get_change(m))

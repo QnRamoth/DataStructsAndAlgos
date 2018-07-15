@@ -22,7 +22,8 @@ def get_optimal_value(capacity, weights, values):
 
 
 if __name__ == "__main__":
-    data = list(map(int, input().split()))
+    data = list(map(int, sys.stdin.read().split()))
+    # data = list(map(int, input().split()))
     n, capacity = data[0:2] #assign first to values to n and capacity
     values = data[2:(2 * n + 2):2] #assign every other value from 2 to 2*n+2
     weights = data[3:(2 * n + 2):2] #assign every other value from 3 to 2*n+2

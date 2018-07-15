@@ -20,8 +20,10 @@ def isGreaterOrEqual(digit, maxDigit):
     return d_md >= md_d
 
 if __name__ == '__main__':
-    inputs = input()
-    data = inputs.split()
+    input = sys.stdin.read()
+    data = input.split()
+    # inputs = input()
+    # data = inputs.split()
     a = data[1:]
     print(largest_number(a))
     
